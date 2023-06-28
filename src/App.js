@@ -44,6 +44,7 @@
 // Here I implement a simple NavBar using React BrowserRouter
 import Homepage from './navigation/Homepage';
 import AboutMe from './navigation/AboutMe';
+import CalculatorLink from './navigation/CalculatorLink';
 import { Routes, Route, Link} from 'react-router-dom';
 
 function App() {
@@ -56,10 +57,12 @@ function App() {
       <nav className='nav'>
         <Link to="/" className='nav-item'>Homepage</Link>
         <Link to="/about-me" className='nav-item'>AboutMe</Link>
+        <Link to="/calculator" className='nav-item'>Calculator</Link>
       </nav>
       <Routes>
       <Route path='/' element={<Homepage />} />
       <Route path='/about-me' element={<AboutMe />} />
+      <Route path='/calculator' element={<CalculatorLink />} />
       </Routes>
     </div>
   );

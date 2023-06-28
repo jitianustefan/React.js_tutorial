@@ -1,7 +1,7 @@
 function CalendarGreet() {
     const time = new Date();
     const day = time.toLocaleString("en-us", {weekday: "long"});
-    const morning = time.getHours() >=6 && time.getHours() <=12;
+    const morning = time.getHours() >=12 && time.getHours() <=16;
     let dayMessage;
 
     if( day.toLowerCase() === "monday"){
@@ -22,7 +22,7 @@ function CalendarGreet() {
             <h1>
                 {dayMessage}
             </h1>
-            {morning ? <h2>Have you had breakfast yet ?</h2> : ''}
+            {morning ? <h2>Have you had lunch yet ?</h2> : ''}
         </div>
     );
 }
