@@ -22,16 +22,46 @@
 
 // export default App;
 
-import MealsProvider from "./componente/MealsProvider"; 
-import MealsList from "./componente/MealsList";
-import Counter from "./componente/Counter";
+
+// Here I learned the concept of React Context API
+
+// import MealsProvider from "./componente/MealsProvider"; 
+// import MealsList from "./componente/MealsList";
+// import Counter from "./componente/Counter";
+
+// function App() {
+//   return (
+//     <MealsProvider>
+//       <MealsList />
+//       <Counter />
+//     </MealsProvider>
+//   );
+// }
+
+// export default App;
+
+
+// Here I implement a simple NavBar using React BrowserRouter
+import Homepage from './navigation/Homepage';
+import AboutMe from './navigation/AboutMe';
+import { Routes, Route, Link} from 'react-router-dom';
 
 function App() {
   return (
-    <MealsProvider>
-      <MealsList />
-      <Counter />
-    </MealsProvider>
+    <div className='App'>
+      {/* <nav className='nav'>
+        <a href="#" className='nav-item'>Homepage</a>
+        <a href="#" className='nav-item'>About Me</a>
+      </nav> */}
+      <nav className='nav'>
+        <Link to="/" className='nav-item'>Homepage</Link>
+        <Link to="/about-me" className='nav-item'>AboutMe</Link>
+      </nav>
+      <Routes>
+      <Route path='/' element={<Homepage />} />
+      <Route path='/about-me' element={<AboutMe />} />
+      </Routes>
+    </div>
   );
 }
 
